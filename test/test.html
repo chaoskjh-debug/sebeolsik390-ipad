@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>세벌식 390 테스트</title>
+<style>
+  :root { color-scheme: light dark; --bg:#fafafa; --fg:#1d1d1f; --line:#ccc; --ok:#1a7f37; --bad:#c62828; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#1c1c1e; --fg:#f2f2f7; --line:#48484a; --ok:#4cc26a; --bad:#ff6b6b; } }
+  body { margin:0; padding:20px 16px 60px; background:var(--bg); color:var(--fg); font:16px/1.5 -apple-system,system-ui,sans-serif; }
+  main { max-width:720px; margin:0 auto; }
+  label { display:block; margin:18px 0 6px; font-weight:600; }
+  input, textarea, [contenteditable] { box-sizing:border-box; width:100%; font:18px/1.5 inherit; padding:8px 10px;
+    border:1px solid var(--line); border-radius:8px; background:transparent; color:inherit; }
+  textarea { height:90px; }
+  [contenteditable] { min-height:70px; }
+  button { font:inherit; padding:6px 14px; margin-top:18px; }
+  #results { font:13px/1.6 ui-monospace,Menlo,monospace; white-space:pre-wrap; }
+  .ok { color:var(--ok); } .bad { color:var(--bad); }
+  p.hint { font-size:14px; opacity:.8; }
+</style>
+</head>
+<body>
+<main>
+  <h1>세벌식 390 입력 테스트</h1>
+  <p class="hint">기기의 입력 언어를 영어(ABC)로 두고 아래 칸에 직접 쳐 보세요. Shift+Space로 한/영 전환됩니다.</p>
+
+  <label for="f-input">input</label>
+  <input id="f-input" autocomplete="off">
+  <label for="f-textarea">textarea</label>
+  <textarea id="f-textarea"></textarea>
+  <label>contenteditable</label>
+  <div id="f-ce" contenteditable="true"></div>
+  <label for="f-pw">password (동작하지 않아야 함)</label>
+  <input id="f-pw" type="password" autocomplete="off">
+
+  <button id="run" type="button">자동 테스트 실행</button>
+  <div id="results"></div>
+</main>
+
+<script src="../sebeolsik390.user.js"></script>
+<script>
+// 합성 keydown 이벤트로 각 입력창에 키를 보내 결과를 확인합니다.
+const cases = [
+  ['M F S K G W', '한글'],
+  ['N C Semicolon T W N D X', '세벌식'],
+  ['K K F O D', '까치'],
+  ['U F W X', '닭'],
+  ['J T 3 Q U F', '없다'],
+  ['J V R', '왜'],
+  ['Semicolon 9 C W X', '뷁'],
+  ['K V J 6 A J D', '고양이'],
+  ['M F S Period', '한.'],
+  ['K F S-U S-I', '가78'],
+  ['U F W X BS BS', '다'],
+  ['K F K F BS BS', '가'],
+  ['J V F BS', '오'],
+];
+const K = (c) => (/^\d$/.test(c) ? 'Digit' + c : c.length === 1 ? 'Key' + c : c);
+
+function send(el, tok) {
+  const shift = tok.startsWith('S-');
+  const name = shift ? tok.slice(2) : tok;
+  const init = tok === 'BS'
+    ? { key: 'Backspace', code: 'Backspace' }
+    : { key: name.length === 1 ? name.toLowerCase() : name, code: K(name), shiftKey: shift };
+  el.dispatchEvent(new KeyboardEvent('keydown', { ...init, bubbles: true, cancelable: true, composed: true }));
+}
+const read = (el) => ('value' in el ? el.value : el.textContent);
+function clear(el) {
+  el.focus();
+  if ('value' in el) el.value = ''; else el.textContent = '';
+  const sel = getSelection(); if (!('value' in el)) { sel.selectAllChildren(el); sel.collapseToEnd(); }
+}
+
+document.getElementById('run').addEventListener('click', () => {
+  const out = [];
+  let pass = 0, total = 0;
+  for (const id of ['f-input', 'f-textarea', 'f-ce']) {
+    const el = document.getElementById(id);
+    for (const [seq, want] of cases) {
+      clear(el);
+      for (const tok of seq.split(' ')) send(el, tok);
+      const got = read(el);
+      total++; if (got === want) pass++;
+      out.push(`<span class="${got === want ? 'ok' : 'bad'}">${got === want ? '✓' : '✗'} ${id.padEnd(10)} ${seq.padEnd(26)} → ${JSON.stringify(got)}${got === want ? '' : ' (기대: ' + JSON.stringify(want) + ')'}</span>`);
+    }
+    clear(el);
+  }
+  // 비밀번호 칸: 스크립트가 손대지 않아야 함 (합성 이벤트라 아무 글자도 들어가지 않아야 정상)
+  const pw = document.getElementById('f-pw'); clear(pw); send(pw, 'M'); send(pw, 'F');
+  total++; if (pw.value === '') pass++;
+  out.push(`<span class="${pw.value === '' ? 'ok' : 'bad'}">${pw.value === '' ? '✓' : '✗'} f-pw       무시됨 → ${JSON.stringify(pw.value)}</span>`);
+  out.unshift(`<b>${pass} / ${total} 통과</b>`);
+  document.getElementById('results').innerHTML = out.join('\n');
+  document.title = `세벌식 390 테스트 ${pass}/${total}`;
+});
+</script>
+</body>
+</html>

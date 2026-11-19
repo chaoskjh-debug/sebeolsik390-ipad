@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- Google·YouTube처럼 Trusted Types를 강제하는 페이지를 흉내 냄 -->
+<meta http-equiv="Content-Security-Policy" content="require-trusted-types-for 'script'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>세벌식 390 Trusted Types 테스트</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { margin:0; padding:20px 16px; font:16px/1.5 -apple-system,system-ui,sans-serif; background:Canvas; color:CanvasText; }
+  textarea { box-sizing:border-box; width:100%; max-width:600px; height:80px; font:18px/1.5 inherit; }
+</style>
+</head>
+<body>
+  <h1>Trusted Types 강제 페이지</h1>
+  <p>이 페이지에서는 문자열을 <code>innerHTML</code>에 넣으면 오류가 납니다.</p>
+  <textarea id="q" name="q" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false"></textarea>
+  <script src="../sebeolsik390.user.js"></script>
+</body>
+</html>
