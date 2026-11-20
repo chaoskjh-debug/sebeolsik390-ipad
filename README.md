@@ -16,10 +16,10 @@ iPadOS에는 세벌식 입력 방식이 없어서, macOS에서 세벌식 390을 
 1. App Store에서 **[Userscripts](https://apps.apple.com/app/userscripts/id1463298887)** 앱(무료, 오픈소스)을 설치하고 한 번 엽니다.
    스크립트를 보관할 폴더를 지정하라고 하면 아무 폴더나 지정합니다.
 2. **설정 → 앱 → Safari → 확장 프로그램 → Userscripts**를 켜고, 웹사이트 권한을 **모든 웹사이트 허용**으로 둡니다.
-3. iPad Safari에서 아래 링크를 열고, 나타나는 Userscripts 창에서 **설치(Install)**를 누릅니다.
-   - **[sebeolsik390.user.js 설치](https://raw.githubusercontent.com/chaoskjh-debug/sebeolsik390-ipad/main/sebeolsik390.user.js)**
+3. iPad Safari에서 **[Greasy Fork의 세벌식 390 입력기 페이지](https://greasyfork.org/scripts/606450)**를 열고 초록색 **설치** 버튼을 누릅니다.
+   나타나는 Userscripts 창에서 **설치(Install)**를 누르면 됩니다. 이 방법으로 설치하면 새 버전이 나왔을 때 자동으로 업데이트됩니다.
    - 창이 뜨지 않으면 주소창의 확장 프로그램 버튼(퍼즐 모양) → Userscripts를 누릅니다.
-<!-- Greasy Fork 등록 후 여기에 Greasy Fork 설치 링크를 추가 (자동 업데이트 지원) -->
+   - Greasy Fork를 쓸 수 없을 때는 [GitHub의 원본 파일](https://raw.githubusercontent.com/chaoskjh-debug/sebeolsik390-ipad/main/sebeolsik390.user.js)을 열어 설치할 수도 있습니다. 이 경우 자동 업데이트는 되지 않습니다.
 4. **Safari를 완전히 종료했다가 다시 엽니다.** 앱 전환 화면에서 Safari를 위로 밀어 닫습니다.
 
 ## 사용법
