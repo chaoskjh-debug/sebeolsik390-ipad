@@ -83,9 +83,31 @@ Userscripts 앱에서 스크립트를 열면 맨 위 `CONFIG`에서 바꿀 수 �
 - Google Docs, Notion처럼 입력을 자체적으로 처리하는 편집기에서는 오동작할 수 있습니다.
 - 한/영 표시는 최상위 페이지에만 나타납니다. iframe 안의 입력칸(일부 메일·블로그 편집기)은 한/영 상태가 따로 관리됩니다.
 
-## Mac에서 쓰기
+## 다른 브라우저에서 쓰기
 
-Mac Safari에도 Userscripts 앱이 있어서 같은 방법으로 쓸 수 있습니다. 다만 Mac은 시스템에 세벌식 390이 내장되어 있으므로 보통은 필요 없습니다.
+| 환경 | 가능 여부 | 방법 |
+|---|---|---|
+| iPad Safari | ✅ 확인됨 | 위 설치 방법 (Userscripts 앱) |
+| iPad Safari + Tampermonkey | △ 미확인 | Userscripts 대신 Safari용 Tampermonkey 앱을 써도 동작할 것으로 예상 |
+| iPad Chrome·Edge·Firefox 등 | ❌ 불가 | iOS의 다른 브라우저는 확장 프로그램을 지원하지 않음 |
+| iPad Orion 브라우저 | △ 미확인 | Chrome·Firefox 확장을 시험적으로 지원. Tampermonkey를 설치하면 동작할 가능성 있음 |
+| Mac·Windows Chrome·Edge | △ 미확인 | Tampermonkey 확장으로 설치 (아래 참고) |
+| Mac Safari | △ 미확인 | Mac용 Userscripts 앱으로 iPad와 같은 방법 |
+
+> Mac에는 세벌식 390이 시스템에 기본으로 들어 있어서 보통은 이 스크립트가 필요 없습니다.
+> Windows 한국어 입력기에도 세벌식 배열 설정이 있습니다.
+> 입력기 설정을 바꿀 수 없는 회사·학교 PC처럼 운영체제 입력기를 쓸 수 없을 때 유용합니다.
+
+### 컴퓨터용 Chrome·Edge에 설치하기
+
+1. Chrome 웹 스토어(Edge는 Edge 추가 기능)에서 **Tampermonkey** 확장 프로그램을 설치합니다.
+2. **Chrome 138 이상:** 주소창에 `chrome://extensions`를 입력하고 Tampermonkey의 **세부정보**를 엽니다.
+   **사용자 스크립트 허용**(Allow User Scripts)을 켜야 스크립트가 실행됩니다. 새로 설치한 확장은 기본으로 꺼져 있습니다.
+   - Chrome 137 이하는 같은 화면 오른쪽 위의 **개발자 모드**를 켭니다.
+   - Edge는 `edge://extensions`에서 같은 설정을 확인합니다.
+3. **[Greasy Fork의 세벌식 390 입력기 페이지](https://greasyfork.org/scripts/606450)**에서 **설치** 버튼을 누르고, Tampermonkey 설치 화면에서 **설치**를 누릅니다.
+4. 열려 있던 탭은 새로고침합니다.
+5. **운영체제 입력 언어를 영어로** 두고 웹 페이지 입력칸에서 칩니다. 한/영 전환은 iPad와 같이 **Shift + Space**입니다.
 
 ---
 
