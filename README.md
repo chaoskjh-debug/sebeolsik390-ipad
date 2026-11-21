@@ -1,22 +1,22 @@
-# 세벌식 390 입력기 (iPad Safari용)
+# 세벌식 390 입력기 (iPad·iPhone Safari용)
 
-iPad에 매직 키보드 같은 외장 키보드를 연결하고 **Safari 웹 페이지에서 세벌식 390으로 한글을 입력**할 수 있게 해 주는 사용자 스크립트입니다.
+iPad나 iPhone에 매직 키보드, 블루투스 키보드 같은 외장 키보드를 연결하고 **Safari 웹 페이지에서 세벌식 390으로 한글을 입력**할 수 있게 해 주는 사용자 스크립트입니다.
 
-iPadOS에는 세벌식 입력 방식이 없어서, macOS에서 세벌식 390을 쓰던 사람도 iPad에서는 두벌식을 써야 했습니다.
+iPadOS와 iOS에는 세벌식 입력 방식이 없어서, macOS에서 세벌식 390을 쓰던 사람도 iPad와 iPhone에서는 두벌식을 써야 했습니다.
 이 스크립트는 웹 페이지 안에서 키 입력을 받아 직접 세벌식으로 조합합니다. 배열은 **macOS의 "세벌식 390" 입력 소스와 같습니다.**
 
 > **할 수 있는 것과 없는 것**
 > - ✅ Safari로 연 웹 페이지의 입력칸: 검색창, 게시판·메일 쓰기, 댓글 등
 > - ❌ Safari 주소창, 메모·메시지 같은 다른 앱, 화면(소프트웨어) 키보드
 >
-> iPadOS가 다른 앱의 외장 키보드 입력을 가로채는 것을 허용하지 않기 때문에 생기는 한계입니다.
+> iPadOS·iOS가 다른 앱의 외장 키보드 입력을 가로채는 것을 허용하지 않기 때문에 생기는 한계입니다.
 
-## 설치 (iPad)
+## 설치 (iPad·iPhone)
 
 1. App Store에서 **[Userscripts](https://apps.apple.com/app/userscripts/id1463298887)** 앱(무료, 오픈소스)을 설치하고 한 번 엽니다.
    스크립트를 보관할 폴더를 지정하라고 하면 아무 폴더나 지정합니다.
 2. **설정 → 앱 → Safari → 확장 프로그램 → Userscripts**를 켜고, 웹사이트 권한을 **모든 웹사이트 허용**으로 둡니다.
-3. iPad Safari에서 **[Greasy Fork의 세벌식 390 입력기 페이지](https://greasyfork.org/scripts/606450)**를 열고 초록색 **설치** 버튼을 누릅니다.
+3. iPad·iPhone Safari에서 **[Greasy Fork의 세벌식 390 입력기 페이지](https://greasyfork.org/scripts/606450)**를 열고 초록색 **설치** 버튼을 누릅니다.
    나타나는 Userscripts 창에서 **설치(Install)**를 누르면 됩니다. 이 방법으로 설치하면 새 버전이 나왔을 때 자동으로 업데이트됩니다.
    - 창이 뜨지 않으면 주소창의 확장 프로그램 버튼(퍼즐 모양) → Userscripts를 누릅니다.
    - Greasy Fork를 쓸 수 없을 때는 [GitHub의 원본 파일](https://raw.githubusercontent.com/chaoskjh-debug/sebeolsik390-ipad/main/sebeolsik390.user.js)을 열어 설치할 수도 있습니다. 이 경우 자동 업데이트는 되지 않습니다.
@@ -24,7 +24,7 @@ iPadOS에는 세벌식 입력 방식이 없어서, macOS에서 세벌식 390을 
 
 ## 사용법
 
-- **iPad 입력 언어는 영어로** 둡니다. 한글 조합은 스크립트가 하므로, iPad 자체의 한국어(두벌식) 입력이 켜져 있으면 안 됩니다.
+- **기기 입력 언어는 영어로** 둡니다. 한글 조합은 스크립트가 하므로, iPad·iPhone 자체의 한국어(두벌식) 입력이 켜져 있으면 안 됩니다.
   한국어가 켜진 채로 치면 오른쪽 아래 표시가 빨간색 "기기 입력을 영어로"로 바뀝니다. 🌐 키나 Caps Lock으로 영어로 바꾸세요.
 - **Shift + Space**: 한글(세벌식 390) ↔ 영문 전환. 화면 오른쪽 아래의 `한 390` / `EN` 표시를 눌러도 됩니다.
 - 비밀번호 칸에서는 동작하지 않습니다(항상 영문).
@@ -75,7 +75,7 @@ Userscripts 앱에서 스크립트를 열면 맨 위 `CONFIG`에서 바꿀 수 �
    주소창에서 미리 불러온 페이지에는 스크립트 주입이 늦어지는 Safari 버그가 보고되어 있습니다.
 
 표시는 보이는데 입력이 이상하거나, 특정 사이트에서만 안 되면 **[Issues](https://github.com/chaoskjh-debug/sebeolsik390-ipad/issues)**에 알려 주세요.
-사이트 주소, iPadOS 버전, 증상(어떤 키를 쳤을 때 무엇이 입력됐는지)을 적어 주시면 도움이 됩니다.
+사이트 주소, 기기와 iPadOS·iOS 버전, 증상(어떤 키를 쳤을 때 무엇이 입력됐는지)을 적어 주시면 도움이 됩니다.
 
 ### 알려진 한계
 
@@ -88,8 +88,9 @@ Userscripts 앱에서 스크립트를 열면 맨 위 `CONFIG`에서 바꿀 수 �
 | 환경 | 가능 여부 | 방법 |
 |---|---|---|
 | iPad Safari | ✅ 확인됨 | 위 설치 방법 (Userscripts 앱) |
+| iPhone Safari | ✅ 확인됨 | iPad와 같은 방법 (블루투스 키보드 연결) |
 | iPad Safari + Tampermonkey | △ 미확인 | Userscripts 대신 Safari용 Tampermonkey 앱을 써도 동작할 것으로 예상 |
-| iPad Chrome·Edge·Firefox 등 | ❌ 불가 | iOS의 다른 브라우저는 확장 프로그램을 지원하지 않음 |
+| iPad·iPhone의 Chrome·Edge·Firefox 등 | ❌ 불가 | iOS의 다른 브라우저는 확장 프로그램을 지원하지 않음 |
 | iPad Orion 브라우저 | △ 미확인 | Chrome·Firefox 확장을 시험적으로 지원. Tampermonkey를 설치하면 동작할 가능성 있음 |
 | Mac·Windows Chrome·Edge | △ 미확인 | Tampermonkey 확장으로 설치 (아래 참고) |
 | Mac Safari | △ 미확인 | Mac용 Userscripts 앱으로 iPad와 같은 방법 |
@@ -107,7 +108,7 @@ Userscripts 앱에서 스크립트를 열면 맨 위 `CONFIG`에서 바꿀 수 �
    - Edge는 `edge://extensions`에서 같은 설정을 확인합니다.
 3. **[Greasy Fork의 세벌식 390 입력기 페이지](https://greasyfork.org/scripts/606450)**에서 **설치** 버튼을 누르고, Tampermonkey 설치 화면에서 **설치**를 누릅니다.
 4. 열려 있던 탭은 새로고침합니다.
-5. **운영체제 입력 언어를 영어로** 두고 웹 페이지 입력칸에서 칩니다. 한/영 전환은 iPad와 같이 **Shift + Space**입니다.
+5. **운영체제 입력 언어를 영어로** 두고 웹 페이지 입력칸에서 칩니다. 한/영 전환은 iPad·iPhone과 같이 **Shift + Space**입니다.
 
 ---
 
