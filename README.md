@@ -99,6 +99,15 @@ Userscripts 앱에서 스크립트를 열면 맨 위 `CONFIG`에서 바꿀 수 �
 > Windows 한국어 입력기에도 세벌식 배열 설정이 있습니다.
 > 입력기 설정을 바꿀 수 없는 회사·학교 PC처럼 운영체제 입력기를 쓸 수 없을 때 유용합니다.
 
+### 확인한 환경
+
+| 기기 | 키보드 | OS | 결과 |
+|---|---|---|---|
+| iPad Pro | Apple Magic Keyboard (iPad Pro용) | iPadOS 27.2.1 | ✅ |
+| iPhone | Logitech MX Keys for Mac (블루투스) | iOS 27.2 | ✅ |
+
+다른 기기·키보드에서 써 보신 결과(잘 되는 경우도)를 [Issues](https://github.com/chaoskjh-debug/sebeolsik390-ipad/issues)에 남겨 주시면 표에 추가하겠습니다.
+
 ### 컴퓨터용 Chrome·Edge에 설치하기
 
 1. Chrome 웹 스토어(Edge는 Edge 추가 기능)에서 **Tampermonkey** 확장 프로그램을 설치합니다.
