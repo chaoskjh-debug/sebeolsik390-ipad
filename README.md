@@ -17,10 +17,36 @@ iPadOS와 iOS에는 세벌식 입력 방식이 없어서, macOS에서 세벌식 
    스크립트를 보관할 폴더를 지정하라고 하면 아무 폴더나 지정합니다.
 2. **설정 → 앱 → Safari → 확장 프로그램 → Userscripts**를 켜고, 웹사이트 권한을 **모든 웹사이트 허용**으로 둡니다.
 3. iPad·iPhone Safari에서 **[Greasy Fork의 세벌식 390 입력기 페이지](https://greasyfork.org/scripts/606450)**를 열고 초록색 **설치** 버튼을 누릅니다.
-   나타나는 Userscripts 창에서 **설치(Install)**를 누르면 됩니다. 이 방법으로 설치하면 새 버전이 나왔을 때 자동으로 업데이트됩니다.
-   - 창이 뜨지 않으면 주소창의 확장 프로그램 버튼(퍼즐 모양) → Userscripts를 누릅니다.
-   - Greasy Fork를 쓸 수 없을 때는 [GitHub의 원본 파일](https://raw.githubusercontent.com/chaoskjh-debug/sebeolsik390-ipad/main/sebeolsik390.user.js)을 열어 설치할 수도 있습니다. 이 경우 자동 업데이트는 되지 않습니다.
-4. **Safari를 완전히 종료했다가 다시 엽니다.** 앱 전환 화면에서 Safari를 위로 밀어 닫습니다.
+   - **스크립트 코드가 화면에 그대로 보이면 정상입니다.** 아직 설치된 것은 아니니 그 화면에서 다음 단계로 넘어갑니다.
+4. 코드가 보이는 화면에서 **주소창 왼쪽의 페이지 메뉴 버튼**을 누르고, 확장 프로그램 목록에서 **Userscripts**를 누릅니다.
+   Userscripts 창에 설치 안내가 나오면 **설치(Install)**를 누릅니다. 이 방법으로 설치하면 새 버전이 나왔을 때 자동으로 업데이트됩니다.
+   - 주소창이 화면 아래에 있으면 페이지 메뉴 버튼도 아래쪽 주소창 왼쪽에 있습니다.
+   - Userscripts 창에 이 사이트 권한을 묻는 버튼이 나오면 **허용**을 누른 뒤 다시 엽니다.
+   - Greasy Fork를 쓸 수 없을 때는 [GitHub의 원본 파일](https://raw.githubusercontent.com/chaoskjh-debug/sebeolsik390-ipad/main/sebeolsik390.user.js)을 열고 같은 방법으로 설치할 수도 있습니다. 이 경우 자동 업데이트는 되지 않습니다.
+5. **Safari를 완전히 종료했다가 다시 엽니다.** 앱 전환 화면에서 Safari를 위로 밀어 닫습니다.
+6. **설치 확인:** 아무 웹 페이지의 입력칸을 누르면 화면 오른쪽 아래에 `한 390` 표시가 나타납니다.
+
+### 다른 방법: 파일을 Userscripts 폴더에 직접 복사
+
+위 3~4단계 대신 스크립트 파일 `sebeolsik390.user.js`를 Userscripts 폴더에 넣어도 됩니다.
+링크 설치가 잘 안 될 때나, 파일을 직접 관리하고 싶을 때 쓰세요. **이 방법은 자동 업데이트가 되지 않습니다.**
+
+Userscripts 폴더는 **파일** 앱에서 다음 위치에 있습니다. 1단계에서 다른 폴더를 지정했다면 그 폴더에 넣습니다.
+
+| 기기 | 위치 |
+|---|---|
+| iPad | **나의 iPad → Userscripts** |
+| iPhone | **나의 iPhone → Userscripts** |
+
+- **iPad·iPhone에서 내려받기**
+  1. Safari에서 [GitHub의 원본 파일](https://raw.githubusercontent.com/chaoskjh-debug/sebeolsik390-ipad/main/sebeolsik390.user.js) 링크를 길게 누르고 **링크된 파일 다운로드**를 누릅니다.
+  2. **파일** 앱의 **다운로드** 폴더에서 `sebeolsik390.user.js`를 길게 누르고 **이동**을 눌러 **나의 iPad(iPhone) → Userscripts**로 옮깁니다.
+     파일 이름이 `.user.js`로 끝나야 합니다. `.txt`가 붙었다면 이름을 고칩니다.
+- **Mac에서 보내기:** Mac에서 AirDrop으로 iPad·iPhone에 파일을 보내 **파일** 앱에 저장한 뒤, 위와 같이 Userscripts 폴더로 옮깁니다.
+  1단계에서 Userscripts 폴더를 iCloud Drive 안에 지정했다면, Mac의 Finder에서 그 iCloud Drive 폴더에 바로 넣어도 됩니다.
+
+파일을 넣은 뒤 **Safari를 완전히 종료했다가 다시 열고**, 위 6단계처럼 `한 390` 표시가 나오는지 확인합니다.
+새 버전이 나오면 같은 방법으로 파일을 덮어씁니다.
 
 ## 사용법
 
